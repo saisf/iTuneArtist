@@ -13,7 +13,7 @@
 		AC86966325E1D4C1003F87C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC86966125E1D4C1003F87C7 /* Main.storyboard */; };
 		AC86966525E1D4C2003F87C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC86966425E1D4C2003F87C7 /* Assets.xcassets */; };
 		AC86966825E1D4C2003F87C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC86966625E1D4C2003F87C7 /* LaunchScreen.storyboard */; };
-		AC86967325E1D4C2003F87C7 /* iTuneArtistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86967225E1D4C2003F87C7 /* iTuneArtistTests.swift */; };
+		AC86967325E1D4C2003F87C7 /* ArtistModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86967225E1D4C2003F87C7 /* ArtistModelTests.swift */; };
 		AC86967E25E1D4C2003F87C7 /* iTuneArtistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86967D25E1D4C2003F87C7 /* iTuneArtistUITests.swift */; };
 		AC86969325E1DEA9003F87C7 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86969225E1DEA9003F87C7 /* UIFontExtension.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +45,7 @@
 		AC86966725E1D4C2003F87C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC86966925E1D4C2003F87C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC86966E25E1D4C2003F87C7 /* iTuneArtistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTuneArtistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC86967225E1D4C2003F87C7 /* iTuneArtistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTuneArtistTests.swift; sourceTree = "<group>"; };
+		AC86967225E1D4C2003F87C7 /* ArtistModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModelTests.swift; sourceTree = "<group>"; };
 		AC86967425E1D4C2003F87C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC86967925E1D4C2003F87C7 /* iTuneArtistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTuneArtistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC86967D25E1D4C2003F87C7 /* iTuneArtistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTuneArtistUITests.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		AC86967125E1D4C2003F87C7 /* iTuneArtistTests */ = {
 			isa = PBXGroup;
 			children = (
-				AC86967225E1D4C2003F87C7 /* iTuneArtistTests.swift */,
+				AC86967225E1D4C2003F87C7 /* ArtistModelTests.swift */,
 				AC86967425E1D4C2003F87C7 /* Info.plist */,
 			);
 			path = iTuneArtistTests;
@@ -280,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC86967325E1D4C2003F87C7 /* iTuneArtistTests.swift in Sources */,
+				AC86967325E1D4C2003F87C7 /* ArtistModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
