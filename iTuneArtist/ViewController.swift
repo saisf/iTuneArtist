@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 class ViewController: UIViewController {
+    
+    private let notificationCenter = NotificationCenter.default
+    private var subscribers = Set<AnyCancellable>()
     
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -16,6 +20,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupNavigationItem()
         setupSearchTextFieldLayout()
+        observeSearchTextField()
     }
 
 
@@ -44,6 +49,19 @@ extension ViewController {
         searchTextField.leftViewMode = .unlessEditing
         searchTextField.leftView = imageView
         searchTextField.clearButtonMode = .whileEditing
+    }
+    
+    private func observeSearchTextField() {
+        notificationCenter.publisher(for: UITextField.textDidChangeNotification, object: searchTextField)
+            .sink {
+                guard let textField = $0.object as? UITextField,
+                      let artistName = textField.text else {
+                    return
+                }
+                print(artistName)
+            }
+            .store(in: &subscribers)
+            
     }
 }
 
