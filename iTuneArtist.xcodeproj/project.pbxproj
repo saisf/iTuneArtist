@@ -15,6 +15,7 @@
 		AC86966825E1D4C2003F87C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC86966625E1D4C2003F87C7 /* LaunchScreen.storyboard */; };
 		AC86967325E1D4C2003F87C7 /* iTuneArtistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86967225E1D4C2003F87C7 /* iTuneArtistTests.swift */; };
 		AC86967E25E1D4C2003F87C7 /* iTuneArtistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86967D25E1D4C2003F87C7 /* iTuneArtistUITests.swift */; };
+		AC86969325E1DEA9003F87C7 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86969225E1DEA9003F87C7 /* UIFontExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AC86967925E1D4C2003F87C7 /* iTuneArtistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTuneArtistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC86967D25E1D4C2003F87C7 /* iTuneArtistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTuneArtistUITests.swift; sourceTree = "<group>"; };
 		AC86967F25E1D4C2003F87C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC86969225E1DEA9003F87C7 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		AC86965A25E1D4C1003F87C7 /* iTuneArtist */ = {
 			isa = PBXGroup;
 			children = (
+				AC86969125E1DE71003F87C7 /* Extensions */,
 				AC86965B25E1D4C1003F87C7 /* AppDelegate.swift */,
 				AC86965D25E1D4C1003F87C7 /* SceneDelegate.swift */,
 				AC86965F25E1D4C1003F87C7 /* ViewController.swift */,
@@ -126,6 +129,14 @@
 				AC86967F25E1D4C2003F87C7 /* Info.plist */,
 			);
 			path = iTuneArtistUITests;
+			sourceTree = "<group>";
+		};
+		AC86969125E1DE71003F87C7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC86969225E1DEA9003F87C7 /* UIFontExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 			files = (
 				AC86966025E1D4C1003F87C7 /* ViewController.swift in Sources */,
 				AC86965C25E1D4C1003F87C7 /* AppDelegate.swift in Sources */,
+				AC86969325E1DEA9003F87C7 /* UIFontExtension.swift in Sources */,
 				AC86965E25E1D4C1003F87C7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
