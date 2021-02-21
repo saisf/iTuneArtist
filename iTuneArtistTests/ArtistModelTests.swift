@@ -23,6 +23,7 @@ class ArtistModelTests: XCTestCase {
     func test_Artist_artistName() {
         guard let mockArtist = mockArtist else {
             XCTFail("Expected non-nil artist")
+            return
         }
         XCTAssertEqual(mockArtist.artistName, "Alicia Keys")
     }
@@ -30,6 +31,7 @@ class ArtistModelTests: XCTestCase {
     func test_Artist_trackName() {
         guard let mockArtist = mockArtist else {
             XCTFail("Expected non-nil artist")
+            return
         }
         XCTAssertEqual(mockArtist.trackName, "Karma")
     }
@@ -37,6 +39,7 @@ class ArtistModelTests: XCTestCase {
     func test_Artist_releaseDate() {
         guard let mockArtist = mockArtist else {
             XCTFail("Expected non-nil artist")
+            return
         }
         XCTAssertEqual(mockArtist.releaseDate, "2003-12-02T08:00:00Z")
     }
@@ -44,6 +47,7 @@ class ArtistModelTests: XCTestCase {
     func test_Artist_trackPrice() {
         guard let mockArtist = mockArtist else {
             XCTFail("Expected non-nil artist")
+            return
         }
         XCTAssertEqual(mockArtist.trackPrice, 1.29)
     }
@@ -51,8 +55,9 @@ class ArtistModelTests: XCTestCase {
     func test_Artist_primaryGenreName() {
         guard let mockArtist = mockArtist else {
             XCTFail("Expected non-nil artist")
+            return
         }
-        XCTAssertEqual(mockArtist.trackPrice, "R&B/Soul")
+        XCTAssertEqual(mockArtist.primaryGenreName, "R&B/Soul")
     }
 
 }
