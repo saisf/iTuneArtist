@@ -8,11 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var searchTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupNavigationItem()
+        setupSearchTextFieldLayout()
     }
 
 
@@ -28,6 +31,19 @@ extension ViewController {
         label.text = "Search"
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: label)
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+}
+
+// MARK: - SearchTextField Setup
+extension ViewController {
+    
+    private func setupSearchTextFieldLayout() {
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(systemName: "magnifyingglass")
+        searchTextField.leftViewMode = .unlessEditing
+        searchTextField.leftView = imageView
+        searchTextField.clearButtonMode = .whileEditing
     }
 }
 
