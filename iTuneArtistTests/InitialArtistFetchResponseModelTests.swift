@@ -23,7 +23,7 @@ class InitialArtistFetchResponseModelTests: XCTestCase {
 
     func test_InitialArtistFetchResponse_results_count() throws {
         guard let mockInitialArtistFetchResponse = mockInitialArtistFetchResponse,
-              let resultsCount = mockInitialArtistFetchResponse.results.count
+              case let resultsCount = mockInitialArtistFetchResponse.results.count
         else {
             XCTFail("Expected non-nil initialArtistFetchResponse")
             return
@@ -34,7 +34,7 @@ class InitialArtistFetchResponseModelTests: XCTestCase {
     
     func test_InitialArtistFetchResponse_second_results() throws {
         guard let mockInitialArtistFetchResponse = mockInitialArtistFetchResponse,
-              let secondMockArtist = mockInitialArtistFetchResponse.results[1]
+              case let secondMockArtist = mockInitialArtistFetchResponse.results[1]
         else {
             XCTFail("Expected non-nil initialArtistFetchResponse and second result with value")
             return
