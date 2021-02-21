@@ -55,6 +55,9 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r0K-0S-Yvh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -80,6 +83,7 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Ssx-cr-cMp"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="searchButton" destination="L7Z-cm-h14" id="OI8-q5-vWd"/>
                         <outlet property="searchTextField" destination="8Ff-qF-Wzk" id="Tja-f1-3sp"/>
                     </connections>
                 </viewController>

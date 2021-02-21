@@ -13,7 +13,10 @@ class ViewController: UIViewController {
     private let notificationCenter = NotificationCenter.default
     private var subscribers = Set<AnyCancellable>()
     
+    private var artistName = ""
+    
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,9 @@ class ViewController: UIViewController {
         observeSearchTextField()
     }
 
-
+    @IBAction func searchButtonPressed(_ sender: Any) {
+    }
+    
 }
 
 // MARK: - NavigationItem Setup
@@ -53,12 +58,13 @@ extension ViewController {
     
     private func observeSearchTextField() {
         notificationCenter.publisher(for: UITextField.textDidChangeNotification, object: searchTextField)
-            .sink {
+            .sink { [weak self] in
                 guard let textField = $0.object as? UITextField,
                       let artistName = textField.text else {
                     return
                 }
-                print(artistName)
+                self?.artistName = artistName
+                print(self?.artistName)
             }
             .store(in: &subscribers)
             
