@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XFh-DI-mVr">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad10_2" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -15,16 +15,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iTuneArtist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Uf2-5y-wnD">
-                                <rect key="frame" x="10" y="88" width="394" height="194"/>
+                                <rect key="frame" x="10" y="80" width="790" height="425"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aliciaKeys" translatesAutoresizingMaskIntoConstraints="NO" id="Aof-gk-L2m">
-                                        <rect key="frame" x="5" y="0.0" width="384" height="145"/>
+                                        <rect key="frame" x="5" y="0.0" width="780" height="330"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="145" id="RJR-Cd-wZg"/>
+                                            <constraint firstAttribute="height" constant="145" id="RJR-Cd-wZg">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="330"/>
+                                            </constraint>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -33,20 +35,25 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hAQ-ZX-ASx">
-                                        <rect key="frame" x="5" y="160" width="384" height="34"/>
+                                        <rect key="frame" x="5" y="345" width="780" height="80"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Your Favorite Artist" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ff-qF-Wzk">
-                                                <rect key="frame" x="0.0" y="0.0" width="304" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="635" height="80"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <color key="tintColor" systemColor="systemGray4Color"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7Z-cm-h14">
-                                                <rect key="frame" x="314" y="0.0" width="70" height="34"/>
+                                                <rect key="frame" x="645" y="0.0" width="135" height="80"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="70" id="1sr-Qc-Me2"/>
+                                                    <constraint firstAttribute="width" constant="70" id="1sr-Qc-Me2">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="135"/>
+                                                    </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <state key="normal" title="Search"/>
@@ -55,11 +62,29 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r0K-0S-Yvh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="R06-dV-C1P">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                            </constraint>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="R06-dV-C1P"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="R06-dV-C1P"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -70,7 +95,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Q5-ga-V5D">
-                                <rect key="frame" x="5" y="287" width="404" height="526"/>
+                                <rect key="frame" x="5" y="510" width="800" height="520"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -82,7 +107,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uf2-5y-wnD" secondAttribute="trailing" constant="10" id="BYC-wg-7sx"/>
                             <constraint firstItem="Uf2-5y-wnD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ize-RY-X0k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Q5-ga-V5D" secondAttribute="bottom" id="RMc-e0-9D1"/>
-                            <constraint firstItem="Uf2-5y-wnD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="h2L-TB-C7Q"/>
+                            <constraint firstItem="Uf2-5y-wnD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="h2L-TB-C7Q">
+                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                            </constraint>
                             <constraint firstItem="9Q5-ga-V5D" firstAttribute="top" secondItem="Uf2-5y-wnD" secondAttribute="bottom" constant="5" id="rrU-n6-Z1K"/>
                             <constraint firstItem="9Q5-ga-V5D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="tbD-Ej-bcr"/>
                         </constraints>
@@ -105,7 +132,7 @@
             <objects>
                 <navigationController id="XFh-DI-mVr" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="z2E-J0-zkH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
