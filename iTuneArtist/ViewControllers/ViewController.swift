@@ -34,6 +34,7 @@ class ViewController: UIViewController, ObservableObject {
         observeSearchButtonPressed()
         addArtistListView(artists: artistViewModels)
         navigationController?.setupToHideKeyboardOnTapOnView()
+        searchTextField.delegate = self
     }
 
     @IBAction func searchButtonPressed(_ sender: Any) {
@@ -56,7 +57,7 @@ extension ViewController {
 }
 
 // MARK: - SearchTextField Setup
-extension ViewController {
+extension ViewController: UITextFieldDelegate {
     
     private func setupSearchTextFieldLayout() {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
@@ -79,6 +80,13 @@ extension ViewController {
             }
             .store(in: &subscribers)
             
+    }
+    
+    /// When return button is pressed on keyboard, search will occur based on textField input
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        searchButtonPressedSubject.send()
+        return false
     }
 }
 
