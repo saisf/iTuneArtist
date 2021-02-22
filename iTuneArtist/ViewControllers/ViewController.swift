@@ -7,8 +7,9 @@
 
 import UIKit
 import Combine
+import SwiftUI
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ObservableObject {
     
     private let notificationCenter = NotificationCenter.default
     private var subscribers = Set<AnyCancellable>()
@@ -17,10 +18,13 @@ class ViewController: UIViewController {
     
     private var artistName = ""
     
+    @Published var artistViewModels = [ArtistViewModel]()
+    
     private var webservice = Webservice()
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var artistResultsContainerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,7 @@ class ViewController: UIViewController {
         setupSearchTextFieldLayout()
         observeSearchTextField()
         observeSearchButtonPressed()
+        addArtistListView(artists: artistViewModels)
     }
 
     @IBAction func searchButtonPressed(_ sender: Any) {
@@ -99,11 +104,12 @@ extension ViewController {
                         default:
                             break
                         }
-                    }, receiveValue: { (artists) in
+                    }, receiveValue: { (artistViewModels) in
                         Spinner.removeSpinner(self)
-                        if artists.isEmpty {
+                        if artistViewModels.isEmpty {
                             self.presentAlert(type: .noArtistFound)
                         }
+                        self.artistViewModels = artistViewModels
                     })
             }
             .store(in: &subscribers)
@@ -132,6 +138,32 @@ extension ViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+}
+
+// MARK: ArtistListView
+extension ViewController {
+    
+    /// This function allows ArtistListView as SwiftUI view to integrate and be contained inside of regular UIView
+    private func addArtistListView(artists: [ArtistViewModel]) {
+        let artistListView = ArtistListView(viewController: self)
+        let hostingController = UIHostingController(rootView: artistListView)
+        
+        artistResultsContainerView.addSubview(hostingController.view)
+        
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        /// Setup the SwiftUI view constraints to the UIView boundaries
+        let constraints = [
+               hostingController.view.topAnchor.constraint(equalTo: artistResultsContainerView.topAnchor),
+               hostingController.view.leftAnchor.constraint(equalTo: artistResultsContainerView.leftAnchor),
+               artistResultsContainerView.bottomAnchor.constraint(equalTo: hostingController.view.bottomAnchor),
+               artistResultsContainerView.rightAnchor.constraint(equalTo: hostingController.view.rightAnchor)
+           ]
+
+        NSLayoutConstraint.activate(constraints)
+    }
+    
+    
 }
 
 

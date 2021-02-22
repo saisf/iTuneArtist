@@ -19,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Uf2-5y-wnD">
-                                <rect key="frame" x="10" y="93" width="394" height="184"/>
+                                <rect key="frame" x="10" y="93" width="394" height="149"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aliciaKeys" translatesAutoresizingMaskIntoConstraints="NO" id="Aof-gk-L2m">
-                                        <rect key="frame" x="5" y="0.0" width="384" height="135"/>
+                                        <rect key="frame" x="5" y="0.0" width="384" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="135" id="RJR-Cd-wZg"/>
+                                            <constraint firstAttribute="height" constant="100" id="RJR-Cd-wZg"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -33,7 +33,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hAQ-ZX-ASx">
-                                        <rect key="frame" x="5" y="150" width="384" height="34"/>
+                                        <rect key="frame" x="5" y="115" width="384" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Your Favorite Artist" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ff-qF-Wzk">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="34"/>
@@ -69,20 +69,29 @@
                                     <constraint firstAttribute="trailing" secondItem="Aof-gk-L2m" secondAttribute="trailing" constant="5" id="iUE-ET-vbQ"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Q5-ga-V5D">
+                                <rect key="frame" x="5" y="247" width="404" height="566"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Q5-ga-V5D" secondAttribute="trailing" constant="5" id="1UL-CQ-r5h"/>
                             <constraint firstItem="Uf2-5y-wnD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="7Wr-yu-HFX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uf2-5y-wnD" secondAttribute="trailing" constant="10" id="BYC-wg-7sx"/>
                             <constraint firstItem="Uf2-5y-wnD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ize-RY-X0k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Q5-ga-V5D" secondAttribute="bottom" id="RMc-e0-9D1"/>
                             <constraint firstItem="Uf2-5y-wnD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="h2L-TB-C7Q"/>
+                            <constraint firstItem="9Q5-ga-V5D" firstAttribute="top" secondItem="Uf2-5y-wnD" secondAttribute="bottom" constant="5" id="rrU-n6-Z1K"/>
+                            <constraint firstItem="9Q5-ga-V5D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="tbD-Ej-bcr"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Ssx-cr-cMp"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="artistResultsContainerView" destination="9Q5-ga-V5D" id="9J5-7R-L2X"/>
                         <outlet property="searchButton" destination="L7Z-cm-h14" id="OI8-q5-vWd"/>
                         <outlet property="searchTextField" destination="8Ff-qF-Wzk" id="Tja-f1-3sp"/>
                     </connections>

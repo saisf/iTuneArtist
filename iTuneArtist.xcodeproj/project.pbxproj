@@ -24,6 +24,7 @@
 		AC8696E125E32FCE003F87C7 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696E025E32FCE003F87C7 /* AlertError.swift */; };
 		AC8696E725E33427003F87C7 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696E625E33427003F87C7 /* RequestError.swift */; };
 		AC8696F225E34342003F87C7 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696F125E34342003F87C7 /* Spinner.swift */; };
+		AC8696FF25E34FEA003F87C7 /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696FE25E34FEA003F87C7 /* ArtistListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		AC8696E025E32FCE003F87C7 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
 		AC8696E625E33427003F87C7 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		AC8696F125E34342003F87C7 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		AC8696FE25E34FEA003F87C7 /* ArtistListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,8 @@
 		AC86965A25E1D4C1003F87C7 /* iTuneArtist */ = {
 			isa = PBXGroup;
 			children = (
+				AC8696FD25E34FC7003F87C7 /* Views */,
+				AC8696FC25E34FAE003F87C7 /* ViewControllers */,
 				AC8696E525E332B0003F87C7 /* Errors */,
 				AC8696D425E2F42A003F87C7 /* Utilities */,
 				AC8696CE25E2F3D7003F87C7 /* Services */,
@@ -124,7 +128,6 @@
 				AC86969125E1DE71003F87C7 /* Extensions */,
 				AC86965B25E1D4C1003F87C7 /* AppDelegate.swift */,
 				AC86965D25E1D4C1003F87C7 /* SceneDelegate.swift */,
-				AC86965F25E1D4C1003F87C7 /* ViewController.swift */,
 				AC86966125E1D4C1003F87C7 /* Main.storyboard */,
 				AC86966425E1D4C2003F87C7 /* Assets.xcassets */,
 				AC86966625E1D4C2003F87C7 /* LaunchScreen.storyboard */,
@@ -193,6 +196,22 @@
 				AC8696E625E33427003F87C7 /* RequestError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		AC8696FC25E34FAE003F87C7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC86965F25E1D4C1003F87C7 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AC8696FD25E34FC7003F87C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AC8696FE25E34FEA003F87C7 /* ArtistListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +353,7 @@
 				AC8696B425E2E9A0003F87C7 /* Artist.swift in Sources */,
 				AC8696E725E33427003F87C7 /* RequestError.swift in Sources */,
 				AC8696C425E2F0B1003F87C7 /* InitialArtistFetchResponse.swift in Sources */,
+				AC8696FF25E34FEA003F87C7 /* ArtistListView.swift in Sources */,
 				AC86965E25E1D4C1003F87C7 /* SceneDelegate.swift in Sources */,
 				AC8696D625E2F461003F87C7 /* Constants.swift in Sources */,
 			);

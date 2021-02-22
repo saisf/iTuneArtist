@@ -10,7 +10,7 @@ import Combine
 
 class Webservice {
     
-    func fetchArtist(name: String) -> AnyPublisher<[Artist], Error> {
+    func fetchArtist(name: String) -> AnyPublisher<[ArtistViewModel], Error> {
         
         guard let url = URL(string: Constants.URLs.artist(name: name)) else {
             let error = URLError(.badURL)
@@ -25,6 +25,13 @@ class Webservice {
             .map(\.data)
             .decode(type: InitialArtistFetchResponse.self, decoder: JSONDecoder())
             .map { $0.results }
+            .map { artists -> [ArtistViewModel] in
+                var artistsViewModel = [ArtistViewModel]()
+                artists.forEach { (artist) in
+                    artistsViewModel.append(ArtistViewModel(artist: artist))
+                }
+                return artistsViewModel
+            }
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
     }
