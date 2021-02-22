@@ -83,23 +83,27 @@ extension ViewController {
     private func observeSearchButtonPressed() {
         searchButtonPressedSubject
             .sink { [weak self] (_) in
-                guard let urlHostAllowedArtistName = self?.artistName.lowercased().addingPercentEncoding(withAllowedCharacters: .urlHostAllowed),
+                guard let self = self else { return }
+                guard let urlHostAllowedArtistName = self.artistName.lowercased().addingPercentEncoding(withAllowedCharacters: .urlHostAllowed),
                       !urlHostAllowedArtistName.isEmpty
                 else {
-                    self?.presentAlert(type: .emptyString)
+                    self.presentAlert(type: .emptyString)
                    return
                 }
-                self?.anyCancellable = self?.webservice.fetchArtist(name: urlHostAllowedArtistName)
+                Spinner.showSpinner(self)
+                self.anyCancellable = self.webservice.fetchArtist(name: urlHostAllowedArtistName)
                     .sink(receiveCompletion: { (completion) in
+                        Spinner.removeSpinner(self)
                         switch completion {
                         case .failure( _):
-                            self?.presentAlert(type: .artistFetchSessionError)
+                            self.presentAlert(type: .artistFetchSessionError)
                         default:
                             break
                         }
                     }, receiveValue: { (artists) in
+                        Spinner.removeSpinner(self)
                         if artists.isEmpty {
-                            self?.presentAlert(type: .noArtistFound)
+                            self.presentAlert(type: .noArtistFound)
                         }
                         print("Result: \(artists)")
                     })
