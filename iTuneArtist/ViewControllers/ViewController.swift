@@ -33,6 +33,7 @@ class ViewController: UIViewController, ObservableObject {
         observeSearchTextField()
         observeSearchButtonPressed()
         addArtistListView(artists: artistViewModels)
+        navigationController?.setupToHideKeyboardOnTapOnView()
     }
 
     @IBAction func searchButtonPressed(_ sender: Any) {

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ArtistListView: View {
     
@@ -13,54 +14,39 @@ struct ArtistListView: View {
     
     var body: some View {
         List(viewController.artistViewModels) { artistViewModel in
-            HStack {
-                Text("\(artistViewModel.name)")
-                Text("\(artistViewModel.trackName)")
-                Text("\(artistViewModel.releaseDate)")
-                Text("\(artistViewModel.price)")
-                Text("\(artistViewModel.genre)")
+            HStack(spacing: 10) {
+                AlbumImageView(artistViewModel: artistViewModel)
+                VStack(alignment: .leading) {
+                    Text(artistViewModel.trackName)
+                        .font(.system(.headline, design: .rounded))
+                        .lineLimit(2)
+                    Text(artistViewModel.name)
+                        .foregroundColor(.gray)
+                        .font(.subheadline)
+                        .lineLimit(2)
+                        .padding(.bottom, 3)
+                    
+                    
+                    Text(artistViewModel.price)
+                        .font(.callout)
+                        .fontWeight(.black)
+                    HStack {
+                        Text(artistViewModel.releaseDate)
+                            .foregroundColor(.secondary)
+                            .font(.footnote)
+                            .fontWeight(.medium)
+                        Text(artistViewModel.genre)
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                    }
+                    
+                    
+                }
+                
             }
-            
+            .frame(height:120)
         }
     }
 }
 
-class ArtistViewModel: Identifiable {
-    
-    let id = UUID()
-    
-    var artist: Artist
-    
-    init(artist: Artist) {
-        self.artist = artist
-    }
-    
-    var name: String {
-        artist.artistName
-    }
-    
-    var trackName: String {
-        artist.trackName
-    }
-    
-    var releaseDate: String {
-        let isoDate = artist.releaseDate
-        let dateFormatter = ISO8601DateFormatter()
-        let releaseDateFormatter = DateFormatter()
-        releaseDateFormatter.dateFormat = "MMM dd,yyyy"
-        if let releaseDate = dateFormatter.date(from: isoDate) {
-            return releaseDateFormatter.string(from: releaseDate)
-        } else {
-            return "Release date unavailable"
-        }
-    }
-    
-    var price: String {
-        "$ \(artist.trackPrice)"
-    }
-    
-    var genre: String {
-        artist.primaryGenreName
-    }
-    
-}
+

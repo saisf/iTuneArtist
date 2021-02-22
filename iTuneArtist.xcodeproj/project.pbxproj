@@ -25,6 +25,9 @@
 		AC8696E725E33427003F87C7 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696E625E33427003F87C7 /* RequestError.swift */; };
 		AC8696F225E34342003F87C7 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696F125E34342003F87C7 /* Spinner.swift */; };
 		AC8696FF25E34FEA003F87C7 /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696FE25E34FEA003F87C7 /* ArtistListView.swift */; };
+		ACC5927125E43B4900008475 /* AlbumImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5927025E43B4900008475 /* AlbumImageView.swift */; };
+		ACC5927725E43C2C00008475 /* ArtistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5927625E43C2C00008475 /* ArtistViewModel.swift */; };
+		ACC5927F25E449F800008475 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5927E25E449F700008475 /* UINavigationControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		AC8696E625E33427003F87C7 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		AC8696F125E34342003F87C7 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		AC8696FE25E34FEA003F87C7 /* ArtistListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
+		ACC5927025E43B4900008475 /* AlbumImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumImageView.swift; sourceTree = "<group>"; };
+		ACC5927625E43C2C00008475 /* ArtistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewModel.swift; sourceTree = "<group>"; };
+		ACC5927E25E449F700008475 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 		AC86965A25E1D4C1003F87C7 /* iTuneArtist */ = {
 			isa = PBXGroup;
 			children = (
+				ACC5927525E43C0600008475 /* View Models */,
 				AC8696FD25E34FC7003F87C7 /* Views */,
 				AC8696FC25E34FAE003F87C7 /* ViewControllers */,
 				AC8696E525E332B0003F87C7 /* Errors */,
@@ -159,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				AC86969225E1DEA9003F87C7 /* UIFontExtension.swift */,
+				ACC5927E25E449F700008475 /* UINavigationControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -210,8 +218,17 @@
 			isa = PBXGroup;
 			children = (
 				AC8696FE25E34FEA003F87C7 /* ArtistListView.swift */,
+				ACC5927025E43B4900008475 /* AlbumImageView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		ACC5927525E43C0600008475 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				ACC5927625E43C2C00008475 /* ArtistViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,11 +366,14 @@
 				AC8696D025E2F3E5003F87C7 /* Webservice.swift in Sources */,
 				AC8696E125E32FCE003F87C7 /* AlertError.swift in Sources */,
 				AC86965C25E1D4C1003F87C7 /* AppDelegate.swift in Sources */,
+				ACC5927F25E449F800008475 /* UINavigationControllerExtension.swift in Sources */,
 				AC86969325E1DEA9003F87C7 /* UIFontExtension.swift in Sources */,
 				AC8696B425E2E9A0003F87C7 /* Artist.swift in Sources */,
 				AC8696E725E33427003F87C7 /* RequestError.swift in Sources */,
 				AC8696C425E2F0B1003F87C7 /* InitialArtistFetchResponse.swift in Sources */,
+				ACC5927125E43B4900008475 /* AlbumImageView.swift in Sources */,
 				AC8696FF25E34FEA003F87C7 /* ArtistListView.swift in Sources */,
+				ACC5927725E43C2C00008475 /* ArtistViewModel.swift in Sources */,
 				AC86965E25E1D4C1003F87C7 /* SceneDelegate.swift in Sources */,
 				AC8696D625E2F461003F87C7 /* Constants.swift in Sources */,
 			);

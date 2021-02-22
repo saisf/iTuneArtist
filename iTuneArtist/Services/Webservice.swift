@@ -35,4 +35,20 @@ class Webservice {
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
     }
+    
+    func fetchImage(url: String) -> AnyPublisher<Data, Error> {
+        
+        guard let url = URL(string: url) else {
+            let error = URLError(.badURL)
+            return Fail(error: error).eraseToAnyPublisher()
+        }
+        
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .mapError { error -> RequestError in
+                return RequestError.artistUrlSessionError(error: error)
+            }
+            .map(\.data)
+            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
+    }
 }
