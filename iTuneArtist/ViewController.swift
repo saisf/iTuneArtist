@@ -12,21 +12,26 @@ class ViewController: UIViewController {
     
     private let notificationCenter = NotificationCenter.default
     private var subscribers = Set<AnyCancellable>()
+    private var searchButtonPressedSubject = PassthroughSubject<Void, Never>()
+    private var anyCancellable: AnyCancellable?
     
     private var artistName = ""
+    
+    private var webservice = Webservice()
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         setupNavigationItem()
         setupSearchTextFieldLayout()
         observeSearchTextField()
+        observeSearchButtonPressed()
     }
 
     @IBAction func searchButtonPressed(_ sender: Any) {
+        searchButtonPressedSubject.send()
     }
     
 }
@@ -58,6 +63,7 @@ extension ViewController {
     
     private func observeSearchTextField() {
         notificationCenter.publisher(for: UITextField.textDidChangeNotification, object: searchTextField)
+            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
             .sink { [weak self] in
                 guard let textField = $0.object as? UITextField,
                       let artistName = textField.text else {
@@ -69,6 +75,33 @@ extension ViewController {
             .store(in: &subscribers)
             
     }
+}
+
+// MARK: - SearchButton
+extension ViewController {
+    
+    private func observeSearchButtonPressed() {
+        searchButtonPressedSubject
+            .sink { [weak self] (_) in
+                guard let urlHostAllowedArtistName = self?.artistName.lowercased().addingPercentEncoding(withAllowedCharacters: .urlHostAllowed),
+                      !urlHostAllowedArtistName.isEmpty
+                else {
+                    print("Search button pressed, but artistName is empty")
+                   return
+                }
+                self?.anyCancellable = self?.webservice.fetchArtist(name: urlHostAllowedArtistName)
+                    .sink(receiveCompletion: { (completion) in
+                        print("RESULT: \(completion)")
+                    }, receiveValue: { (artists) in
+                        print("Result: \(artists)")
+                    })
+                    
+                
+                print("Search button pressed: artistName: \(urlHostAllowedArtistName)")
+            }
+            .store(in: &subscribers)
+    }
+    
 }
 
 
