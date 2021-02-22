@@ -28,6 +28,7 @@
 		ACC5927125E43B4900008475 /* AlbumImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5927025E43B4900008475 /* AlbumImageView.swift */; };
 		ACC5927725E43C2C00008475 /* ArtistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5927625E43C2C00008475 /* ArtistViewModel.swift */; };
 		ACC5927F25E449F800008475 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5927E25E449F700008475 /* UINavigationControllerExtension.swift */; };
+		ACC5928A25E45BD300008475 /* ArtistViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5928925E45BD300008475 /* ArtistViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		ACC5927025E43B4900008475 /* AlbumImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumImageView.swift; sourceTree = "<group>"; };
 		ACC5927625E43C2C00008475 /* ArtistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewModel.swift; sourceTree = "<group>"; };
 		ACC5927E25E449F700008475 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		ACC5928925E45BD300008475 /* ArtistViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				AC86967225E1D4C2003F87C7 /* ArtistModelTests.swift */,
+				ACC5928925E45BD300008475 /* ArtistViewModelTests.swift */,
 				AC8696BB25E2EB73003F87C7 /* InitialArtistFetchResponseModelTests.swift */,
 				AC86967425E1D4C2003F87C7 /* Info.plist */,
 			);
@@ -384,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC86967325E1D4C2003F87C7 /* ArtistModelTests.swift in Sources */,
+				ACC5928A25E45BD300008475 /* ArtistViewModelTests.swift in Sources */,
 				AC8696BC25E2EB73003F87C7 /* InitialArtistFetchResponseModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
