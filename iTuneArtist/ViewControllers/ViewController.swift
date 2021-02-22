@@ -73,7 +73,6 @@ extension ViewController: UITextFieldDelegate {
     // Subscriber to handle user's input in searchTextField
     private func observeSearchTextField() {
         notificationCenter.publisher(for: UITextField.textDidChangeNotification, object: searchTextField)
-            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
             .sink { [weak self] in
                 guard let textField = $0.object as? UITextField,
                       let artistName = textField.text else {
