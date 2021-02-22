@@ -86,7 +86,7 @@ extension ViewController {
                 guard let urlHostAllowedArtistName = self?.artistName.lowercased().addingPercentEncoding(withAllowedCharacters: .urlHostAllowed),
                       !urlHostAllowedArtistName.isEmpty
                 else {
-                    print("Search button pressed, but artistName is empty")
+                    self?.presentAlert(type: .emptyString)
                    return
                 }
                 self?.anyCancellable = self?.webservice.fetchArtist(name: urlHostAllowedArtistName)
@@ -103,6 +103,24 @@ extension ViewController {
     }
     
 }
+
+// MARK: Alert Message Handling
+extension ViewController {
+    
+    private func presentAlert(type: AlertError) {
+        var alertTitle = ""
+        var alertMessage = ""
+        switch type {
+        case .emptyString:
+            alertTitle = "Did you forget the artist?"
+            alertMessage = "Please enter artist name to search."
+        }
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
 
 
 

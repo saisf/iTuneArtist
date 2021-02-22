@@ -21,6 +21,7 @@
 		AC8696C425E2F0B1003F87C7 /* InitialArtistFetchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696C325E2F0B1003F87C7 /* InitialArtistFetchResponse.swift */; };
 		AC8696D025E2F3E5003F87C7 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696CF25E2F3E5003F87C7 /* Webservice.swift */; };
 		AC8696D625E2F461003F87C7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696D525E2F461003F87C7 /* Constants.swift */; };
+		AC8696E125E32FCE003F87C7 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696E025E32FCE003F87C7 /* AlertError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		AC8696C325E2F0B1003F87C7 /* InitialArtistFetchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialArtistFetchResponse.swift; sourceTree = "<group>"; };
 		AC8696CF25E2F3E5003F87C7 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		AC8696D525E2F461003F87C7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AC8696E025E32FCE003F87C7 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		AC86965A25E1D4C1003F87C7 /* iTuneArtist */ = {
 			isa = PBXGroup;
 			children = (
+				AC8696E525E332B0003F87C7 /* Errors */,
 				AC8696D425E2F42A003F87C7 /* Utilities */,
 				AC8696CE25E2F3D7003F87C7 /* Services */,
 				AC8696B225E2E988003F87C7 /* Models */,
@@ -176,6 +179,14 @@
 				AC8696D525E2F461003F87C7 /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AC8696E525E332B0003F87C7 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				AC8696E025E32FCE003F87C7 /* AlertError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 			files = (
 				AC86966025E1D4C1003F87C7 /* ViewController.swift in Sources */,
 				AC8696D025E2F3E5003F87C7 /* Webservice.swift in Sources */,
+				AC8696E125E32FCE003F87C7 /* AlertError.swift in Sources */,
 				AC86965C25E1D4C1003F87C7 /* AppDelegate.swift in Sources */,
 				AC86969325E1DEA9003F87C7 /* UIFontExtension.swift in Sources */,
 				AC8696B425E2E9A0003F87C7 /* Artist.swift in Sources */,
