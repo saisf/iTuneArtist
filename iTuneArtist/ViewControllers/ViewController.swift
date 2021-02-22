@@ -38,6 +38,7 @@ class ViewController: UIViewController, ObservableObject {
     }
 
     @IBAction func searchButtonPressed(_ sender: Any) {
+        // Publish when user press the search button
         searchButtonPressedSubject.send()
     }
     
@@ -46,6 +47,7 @@ class ViewController: UIViewController, ObservableObject {
 // MARK: - NavigationItem Setup
 extension ViewController {
     
+    // Customize NavigationItem font and position
     private func setupNavigationItem() {
         let label = UILabel()
         label.font = .rounded(ofSize: 50, weight: .black)
@@ -68,6 +70,7 @@ extension ViewController: UITextFieldDelegate {
         searchTextField.clearButtonMode = .whileEditing
     }
     
+    // Subscriber to handle user's input in searchTextField
     private func observeSearchTextField() {
         notificationCenter.publisher(for: UITextField.textDidChangeNotification, object: searchTextField)
             .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
@@ -82,7 +85,7 @@ extension ViewController: UITextFieldDelegate {
             
     }
     
-    /// When return button is pressed on keyboard, search will occur based on textField input
+    // When return button is pressed on keyboard, search will occur based on textField input
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         searchButtonPressedSubject.send()
@@ -93,6 +96,7 @@ extension ViewController: UITextFieldDelegate {
 // MARK: - SearchButton
 extension ViewController {
     
+    // Subscriber to handle Webservice fetching artist data when user pressed the search button
     private func observeSearchButtonPressed() {
         searchButtonPressedSubject
             .sink { [weak self] (_) in
@@ -129,6 +133,7 @@ extension ViewController {
 // MARK: Alert Message Handling
 extension ViewController {
     
+    // Present alert based on specifi scenerios
     private func presentAlert(type: AlertError) {
         var alertTitle = ""
         var alertMessage = ""
@@ -152,7 +157,7 @@ extension ViewController {
 // MARK: ArtistListView
 extension ViewController {
     
-    /// This function allows ArtistListView as SwiftUI view to integrate and be contained inside of regular UIView
+    // This function allows ArtistListView as SwiftUI view to integrate and be contained inside of regular UIView
     private func addArtistListView(artists: [ArtistViewModel]) {
         let artistListView = ArtistListView(viewController: self)
         let hostingController = UIHostingController(rootView: artistListView)
@@ -161,7 +166,7 @@ extension ViewController {
         
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         
-        /// Setup the SwiftUI view constraints to the UIView boundaries
+        // Setup the SwiftUI view constraints to the UIView boundaries
         let constraints = [
                hostingController.view.topAnchor.constraint(equalTo: artistResultsContainerView.topAnchor),
                hostingController.view.leftAnchor.constraint(equalTo: artistResultsContainerView.leftAnchor),
@@ -171,7 +176,6 @@ extension ViewController {
 
         NSLayoutConstraint.activate(constraints)
     }
-    
     
 }
 

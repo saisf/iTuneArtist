@@ -9,8 +9,10 @@ import Foundation
 import UIKit
 import Combine
 
+// This helps populate data from Artist to ArtistListView
 class ArtistViewModel: Identifiable, ObservableObject {
     
+    // Publish image to AlbumImageView when image is downloaded
     @Published var image = UIImage(named: "defaultAlbumArtwork")!
     
     private var anyCancellable: AnyCancellable?
@@ -33,6 +35,7 @@ class ArtistViewModel: Identifiable, ObservableObject {
         artist.trackName
     }
     
+    // Format fetch releaseDate to UI refriendly string
     var releaseDate: String {
         let isoDate = artist.releaseDate
         let dateFormatter = ISO8601DateFormatter()
@@ -53,6 +56,7 @@ class ArtistViewModel: Identifiable, ObservableObject {
         artist.primaryGenreName
     }
     
+    // Webservice to fetch image basd on artist albumImage url string
     private func fetchAlbumImage() {
         anyCancellable = webservice.fetchImage(url: artist.albumImage)
             .sink(receiveCompletion: { (_) in

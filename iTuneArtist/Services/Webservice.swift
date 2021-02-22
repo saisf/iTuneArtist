@@ -10,6 +10,7 @@ import Combine
 
 class Webservice {
     
+    // This returns a publisher to post fetching artist data
     func fetchArtist(name: String) -> AnyPublisher<[ArtistViewModel], Error> {
         
         guard let url = URL(string: Constants.URLs.artist(name: name)) else {
@@ -36,6 +37,7 @@ class Webservice {
             .eraseToAnyPublisher()
     }
     
+    // This returns a publisher to post fetching artist album image data
     func fetchImage(url: String) -> AnyPublisher<Data, Error> {
         
         guard let url = URL(string: url) else {

@@ -10,6 +10,7 @@ import Combine
 
 struct ArtistListView: View {
     
+    // Observe parent viewController's property artistViewModel change
     @ObservedObject var viewController: ViewController
     
     var body: some View {

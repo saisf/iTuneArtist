@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Spinner when fetching data
 class Spinner: UIViewController {
 
     var spinner = UIActivityIndicatorView(style: .large)
