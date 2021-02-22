@@ -22,6 +22,7 @@
 		AC8696D025E2F3E5003F87C7 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696CF25E2F3E5003F87C7 /* Webservice.swift */; };
 		AC8696D625E2F461003F87C7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696D525E2F461003F87C7 /* Constants.swift */; };
 		AC8696E125E32FCE003F87C7 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696E025E32FCE003F87C7 /* AlertError.swift */; };
+		AC8696E725E33427003F87C7 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8696E625E33427003F87C7 /* RequestError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		AC8696CF25E2F3E5003F87C7 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		AC8696D525E2F461003F87C7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC8696E025E32FCE003F87C7 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
+		AC8696E625E33427003F87C7 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				AC8696E025E32FCE003F87C7 /* AlertError.swift */,
+				AC8696E625E33427003F87C7 /* RequestError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				AC86965C25E1D4C1003F87C7 /* AppDelegate.swift in Sources */,
 				AC86969325E1DEA9003F87C7 /* UIFontExtension.swift in Sources */,
 				AC8696B425E2E9A0003F87C7 /* Artist.swift in Sources */,
+				AC8696E725E33427003F87C7 /* RequestError.swift in Sources */,
 				AC8696C425E2F0B1003F87C7 /* InitialArtistFetchResponse.swift in Sources */,
 				AC86965E25E1D4C1003F87C7 /* SceneDelegate.swift in Sources */,
 				AC8696D625E2F461003F87C7 /* Constants.swift in Sources */,

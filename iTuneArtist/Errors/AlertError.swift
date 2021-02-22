@@ -7,6 +7,8 @@
 
 import Foundation
 
-enum AlertError {
+enum AlertError: Error {
     case emptyString
+    case artistFetchSessionError
+    case noArtistFound
 }

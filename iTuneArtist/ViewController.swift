@@ -91,8 +91,16 @@ extension ViewController {
                 }
                 self?.anyCancellable = self?.webservice.fetchArtist(name: urlHostAllowedArtistName)
                     .sink(receiveCompletion: { (completion) in
-                        print("RESULT: \(completion)")
+                        switch completion {
+                        case .failure( _):
+                            self?.presentAlert(type: .artistFetchSessionError)
+                        default:
+                            break
+                        }
                     }, receiveValue: { (artists) in
+                        if artists.isEmpty {
+                            self?.presentAlert(type: .noArtistFound)
+                        }
                         print("Result: \(artists)")
                     })
                     
@@ -114,6 +122,12 @@ extension ViewController {
         case .emptyString:
             alertTitle = "Did you forget the artist?"
             alertMessage = "Please enter artist name to search."
+        case .artistFetchSessionError:
+            alertTitle = "Error searching this artist"
+            alertMessage = "Please try again."
+        case .noArtistFound:
+            alertTitle = "No artist found"
+            alertMessage = "Please try another artist."
         }
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

@@ -29,7 +29,3 @@ class Webservice {
             .eraseToAnyPublisher()
     }
 }
-
-enum RequestError: Error {
-    case artistUrlSessionError(error: Error)
-}
