@@ -70,7 +70,6 @@ extension ViewController {
                     return
                 }
                 self?.artistName = artistName
-                print(self?.artistName)
             }
             .store(in: &subscribers)
             
@@ -105,11 +104,7 @@ extension ViewController {
                         if artists.isEmpty {
                             self.presentAlert(type: .noArtistFound)
                         }
-                        print("Result: \(artists)")
                     })
-                    
-                
-                print("Search button pressed: artistName: \(urlHostAllowedArtistName)")
             }
             .store(in: &subscribers)
     }
